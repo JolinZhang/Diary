@@ -7,8 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView cardList;
+    NotesDatabaseHelper noteHelper;
+    private List<Note> noteList;
+    private Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         cardList.setLayoutManager(llm);
 
+        noteHelper = new NotesDatabaseHelper(MainActivity.this);
+        noteList = noteHelper.getAllNote();
+        adapter = new Adapter(MainActivity.this,noteList);
+        cardList.setAdapter(adapter);
+
     }
 
     @Override
@@ -29,19 +39,5 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+    
 }
