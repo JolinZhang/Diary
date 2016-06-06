@@ -111,8 +111,11 @@ public class write extends AppCompatActivity {
                 String picturePath=c.getString(columnIndex);
                 c.close();
                 File imgFile = new  File(picturePath);
-                //rotate picture
+//                //rotate picture
                 Bitmap bitmap = rotatePicture(imgFile);
+//                Bitmap thumbnail = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+//                Matrix matrix = new Matrix();
+//                Bitmap bitmap = Bitmap.createBitmap(thumbnail, 0, 0, thumbnail.getWidth(), thumbnail.getHeight(), matrix, true);
                 //show in ImageView
                 addPhoto.setImageBitmap(bitmap);
                 //save picture
@@ -124,7 +127,7 @@ public class write extends AppCompatActivity {
     public void savePicture(Bitmap imageBitmap){
         //define dir folder
         String root = Environment.getExternalStorageDirectory().toString();
-        File myDir = new File(root + "/notes_images");
+        File myDir = new File(root + "/diary_images");
         if (!myDir.exists()) {
             myDir.mkdirs();
         }

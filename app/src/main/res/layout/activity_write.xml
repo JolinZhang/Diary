@@ -21,7 +21,7 @@
             android:textColorHint="@color/EditText_hint"
             android:layout_margin="10dp"
             android:layout_gravity="center_horizontal"
-            android:theme="@style/editTextTheme"/>
+            />
 
         <EditText
             android:layout_width="fill_parent"
@@ -33,7 +33,6 @@
             android:textColorHint="@color/EditText_hint"
             android:layout_margin="10dp"
             android:layout_gravity="center_horizontal"
-            android:theme="@style/editTextTheme"
             />
 
 

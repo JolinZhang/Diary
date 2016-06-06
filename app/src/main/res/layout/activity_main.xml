@@ -9,5 +9,17 @@
             android:id="@+id/cardList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:elevation="10dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/write"
+        android:src="@drawable/ic_plus"
+        android:background="@drawable/oval"
+        />
+
+
 
 </RelativeLayout>

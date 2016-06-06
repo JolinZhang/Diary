@@ -13,9 +13,9 @@ import java.util.List;
  * Created by Jonelezhang on 5/27/16.
  */
 public class NotesDatabaseHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "notes"; // the name of our database
+    private static final String DB_NAME = "diaries"; // the name of our database
     private static final int DATABASE_VERSION = 1;// database version
-    private static final String TABLE_NAME = "NOTE";
+    private static final String TABLE_NAME = "DIARY";
     private static final String COLUMN_ID = "ID";
     private static final String COLUMN_TITLE = "TITLE";
     private static final String COLUMN_CONTENT = "CONTENT";
