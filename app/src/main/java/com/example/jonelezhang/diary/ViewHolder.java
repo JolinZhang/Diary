@@ -11,16 +11,17 @@ import android.widget.TextView;
  */
 //ViewHolder's constructor receives a View object, which in our case would be our defined CardView
 public class ViewHolder extends RecyclerView.ViewHolder {
+    protected CardView  cardView;
     protected TextView title;
     protected TextView createTime;
-    protected CardView  cardView;
     protected ImageView photo;
     public ViewHolder(View itemView){
         super(itemView);
+        cardView = (CardView) itemView;
         title = (TextView) itemView.findViewById(R.id.noteTitle);
         createTime = (TextView) itemView.findViewById(R.id.noteCreateTime);
         photo = (ImageView) itemView.findViewById(R.id.noteImage);
-        cardView = (CardView) itemView;
+
     }
 
 }

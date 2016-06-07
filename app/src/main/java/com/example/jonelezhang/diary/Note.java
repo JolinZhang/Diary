@@ -10,7 +10,7 @@ public class Note {
     private String imageResourcesId;
     private String createTime;
     //constructor
-    public Note(){
+    public Note(String s){
     }
     //set methods
     public void setId(Integer id){
@@ -42,6 +42,5 @@ public class Note {
     public String getCreateTime(){
         return createTime;
     }
-
 }
 

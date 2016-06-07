@@ -63,7 +63,7 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
         try {
             if (c.moveToFirst()) {
                 do {
-                    Note note = new Note();
+                    Note note = new Note("");
                     note.setId(c.getInt(0));
                     note.setTitle(c.getString(1));
                     note.setContent(c.getString(2));
@@ -82,7 +82,7 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "Select * from " + TABLE_NAME + " where " + id + " = " + COLUMN_ID;
         Cursor c = db.rawQuery(selectQuery, null);
-        Note note = new Note();
+        Note note = new Note("");
         try {
             if (c.moveToFirst()) {
                 note.setId(c.getInt(0));

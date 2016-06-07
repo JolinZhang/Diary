@@ -61,8 +61,9 @@ public class write extends AppCompatActivity {
     }
     // save title, content and image_id into note
     public void saveNote(){
-        Note note = new Note();
+        Note note = new Note("");
         note.setTitle(title.getText().toString());
+        String s  = title.getText().toString();
         note.setContent(content.getText().toString());
         note.setImageResourceId(imageResourcesId);
         //use function addNote in class NotesDatabaseHelper to insert data
@@ -113,9 +114,6 @@ public class write extends AppCompatActivity {
                 File imgFile = new  File(picturePath);
 //                //rotate picture
                 Bitmap bitmap = rotatePicture(imgFile);
-//                Bitmap thumbnail = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-//                Matrix matrix = new Matrix();
-//                Bitmap bitmap = Bitmap.createBitmap(thumbnail, 0, 0, thumbnail.getWidth(), thumbnail.getHeight(), matrix, true);
                 //show in ImageView
                 addPhoto.setImageBitmap(bitmap);
                 //save picture

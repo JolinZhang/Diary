@@ -38,11 +38,11 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         viewHolder.createTime.setText(note.getCreateTime());
         if(note.getImageResourceId() == null)
         {
-            int id = context.getResources().getIdentifier("com.example.jonelezhang.note:drawable/" + "def", null, null);
+            int id = context.getResources().getIdentifier("com.example.jonelezhang.diary:drawable/" + "def", null, null);
             viewHolder.photo.setImageResource(id);
         } else{
             //Photo file path and show photo
-            String path = Environment.getExternalStorageDirectory().toString() + "/notes_images/";
+            String path = Environment.getExternalStorageDirectory().toString() + "/diary_images/";
             String photoPath = path + note.getImageResourceId();
             Bitmap myBitmap = BitmapFactory.decodeFile(photoPath);
             viewHolder.photo.setImageBitmap(Bitmap.createScaledBitmap(myBitmap, 220, 270, false));
